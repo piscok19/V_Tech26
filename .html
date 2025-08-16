@@ -3,159 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V_TECH SOFTWARE & HARDWARE - Jasa Service Komputer Profesional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>V_TECH | Jasa Service Komputer & Laptop Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* === VARIABLES === */
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #dc2626;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
         }
-        
+
+        /* === RESET & BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
-        
+
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #f1f5f9;
+            color: var(--dark);
             line-height: 1.6;
         }
-        
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
         }
-        
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .header-content {
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* === BUTTONS === */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #b91c1c;
+        }
+
+        /* === HEADER === */
+        header {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
+            gap: 0.75rem;
         }
-        
-        .logo img {
-            height: 50px;
-            margin-right: 15px;
+
+        .logo-img {
+            width: 2.5rem;
+            height: 2.5rem;
         }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
         }
-        
-        .logo span {
-            color: var(--secondary);
+
+        .logo-text span {
+            color: var(--primary);
         }
-        
+
         nav ul {
             display: flex;
-            list-style: none;
+            gap: 1.5rem;
         }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
+
+        nav a {
             font-weight: 600;
-            transition: all 0.3s;
+            color: var(--dark);
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
             border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
             cursor: pointer;
         }
-        
-        .btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
         }
-        
-        .btn-accent {
-            background-color: var(--accent);
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
-        .btn-accent:hover {
-            background-color: #c0392b;
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
-        
-        section {
-            padding: 80px 0;
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
-        
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* === SERVICES SECTION === */
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
+            font-size: 2.25rem;
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 0.75rem;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -163,200 +228,217 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
         }
-        
-        .services {
-            background-color: white;
-        }
-        
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
-        
+
         .service-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-icon {
-            background-color: var(--secondary);
+            background-color: var(--primary);
             color: white;
-            font-size: 2.5rem;
-            padding: 30px;
+            font-size: 2rem;
+            padding: 2rem;
             text-align: center;
         }
-        
+
         .service-content {
-            padding: 30px;
+            padding: 1.5rem;
         }
-        
+
         .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
         }
-        
+
+        .service-content p {
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        /* === PROMO BANNER === */
         .promo-banner {
-            background-color: var(--secondary);
+            background-color: var(--primary);
             color: white;
-            padding: 50px 0;
+            padding: 3rem 0;
             text-align: center;
         }
-        
+
         .promo-banner h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
-        
+
         .promo-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 2rem;
+            font-size: 1.125rem;
+            opacity: 0.9;
         }
-        
-        .products {
-            background-color: var(--light);
+
+        .promo-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
-        
+
+        .promo-feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            min-width: 200px;
+        }
+
+        .promo-feature i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* === PRODUCTS SECTION === */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
-        
+
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
             position: relative;
         }
-        
+
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .best-seller {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: gold;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #f59e0b;
             color: var(--dark);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            z-index: 1;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
-        
+
         .product-img {
             height: 200px;
-            background-color: #f1f1f1;
+            background-color: #f8fafc;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            padding: 1rem;
         }
-        
+
         .product-img img {
-            max-width: 80%;
-            max-height: 80%;
+            max-height: 100%;
             object-fit: contain;
         }
-        
+
         .brand-logo {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            width: 2.5rem;
+            height: 2.5rem;
             background-color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .brand-logo img {
-            width: 70%;
-            height: 70%;
+            width: 60%;
+            height: 60%;
             object-fit: contain;
         }
-        
+
         .product-content {
-            padding: 20px;
+            padding: 1.5rem;
         }
-        
+
         .product-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
         }
-        
-        .product-content ul {
-            list-style: none;
-            margin-bottom: 15px;
+
+        .product-specs {
+            margin-bottom: 1rem;
         }
-        
-        .product-content ul li {
-            margin-bottom: 5px;
-            font-size: 0.9rem;
+
+        .product-specs li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
         }
-        
-        .product-content ul li i {
-            color: var(--secondary);
-            margin-right: 5px;
-            width: 15px;
+
+        .product-specs i {
+            color: var(--primary);
+            margin-top: 0.125rem;
         }
-        
-        .price {
-            font-weight: bold;
+
+        .product-price {
+            font-weight: 700;
             color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
             display: block;
         }
-        
-        .contact {
-            background-color: white;
-        }
-        
+
+        /* === CONTACT SECTION === */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
         }
-        
+
         .contact-info {
-            background-color: var(--primary);
+            background-color: var(--dark);
             color: white;
-            padding: 30px;
-            border-radius: 10px;
+            padding: 2rem;
+            border-radius: 0.5rem;
         }
-        
+
         .contact-info h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 0.75rem;
         }
-        
+
         .contact-info h3::after {
             content: '';
             position: absolute;
@@ -364,44 +446,71 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--secondary);
+            background-color: var(--primary);
         }
-        
+
         .contact-info p {
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
-        
-        .contact-info ul {
-            list-style: none;
+
+        .contact-details li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
         }
-        
-        .contact-info ul li {
-            margin-bottom: 15px;
+
+        .contact-details i {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .contact-details a {
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-social a {
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
         }
-        
-        .contact-info ul li i {
-            margin-right: 10px;
-            color: var(--secondary);
-            font-size: 1.2rem;
-            width: 20px;
+
+        .contact-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
         }
-        
+
         .contact-form {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        
+
         .contact-form h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 0.75rem;
         }
-        
+
         .contact-form h3::after {
             content: '';
             position: absolute;
@@ -409,190 +518,248 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--secondary);
+            background-color: var(--primary);
         }
-        
+
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
-        
+
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
         }
-        
+
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
             font-size: 1rem;
+            transition: border-color 0.3s;
         }
-        
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
         .form-group textarea {
-            height: 150px;
+            min-height: 150px;
             resize: vertical;
         }
-        
+
+        /* === FOOTER === */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 50px 0 20px;
-            text-align: center;
+            padding: 4rem 0 2rem;
         }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-            padding: 0 20px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+
+        .footer-col h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 0.75rem;
         }
-        
-        .footer-section h3::after {
+
+        .footer-col h4::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
-            background-color: var(--secondary);
+            background-color: var(--primary);
         }
-        
-        .footer-section p {
-            margin-bottom: 15px;
+
+        .footer-about p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
         }
-        
-        .social-links {
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            opacity: 0.9;
+            transition: opacity 0.3s;
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .social-links a {
-            display: inline-flex;
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-links i {
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 2.5rem;
+            height: 2.5rem;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
             transition: all 0.3s;
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
+
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
         }
-        
+
         .copyright {
-            padding-top: 20px;
+            text-align: center;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
         }
-        
-        /* Responsive Design */
+
+        /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            section {
+                padding: 3rem 0;
             }
-            
+
             nav ul {
-                margin-top: 20px;
-                justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
             }
-            
-            nav ul li {
-                margin: 0 10px;
+
+            .mobile-menu-btn {
+                display: block;
             }
-            
-            .hero-content h2 {
-                font-size: 2.2rem;
+
+            .hero {
+                padding: 5rem 0;
             }
-            
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.875rem;
             }
-            
-            .promo-banner h2 {
-                font-size: 2rem;
+
+            .promo-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .promo-feature {
+                width: 100%;
+                max-width: 300px;
             }
         }
-        
+
         @media (max-width: 480px) {
-            .hero {
-                height: 70vh;
+            .hero h1 {
+                font-size: 2rem;
             }
-            
-            .hero-content h2 {
-                font-size: 1.8rem;
+
+            .section-title h2 {
+                font-size: 1.5rem;
             }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            section {
-                padding: 60px 0;
+
+            .promo-banner h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="https://via.placeholder.com/50x50" alt="V_TECH Logo">
-                    <h1>V_<span>TECH</span></h1>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#services">Layanan</a></li>
-                        <li><a href="#products">Produk</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/40x40" alt="V_TECH Logo" class="logo-img">
+                <span class="logo-text">V_<span>TECH</span></span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h2>V_TECH SOFTWARE & HARDWARE</h2>
+                <h1>V_TECH SOFTWARE & HARDWARE</h1>
                 <p>Solusi profesional untuk semua kebutuhan service dan perawatan komputer, laptop, dan printer Anda. Dengan tim ahli berpengalaman, kami siap memberikan layanan terbaik dengan garansi memuaskan.</p>
-                <a href="#contact" class="btn">Hubungi Kami</a>
-                <a href="#services" class="btn btn-accent">Layanan Kami</a>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Hubungi Kami</a>
+                    <a href="#services" class="btn btn-outline">Layanan Kami</a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Layanan Kami</h2>
+                <p>Kami menyediakan berbagai layanan profesional untuk semua kebutuhan teknologi Anda</p>
             </div>
+            
             <div class="services-grid">
+                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-laptop"></i>
@@ -602,6 +769,8 @@
                         <p>Perbaikan berbagai masalah hardware dan software pada laptop dan komputer dengan teknisi berpengalaman.</p>
                     </div>
                 </div>
+                
+                <!-- Service 2 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-print"></i>
@@ -611,6 +780,8 @@
                         <p>Perbaikan printer berbagai merk, mulai dari masalah ringan hingga kerusakan komponen utama.</p>
                     </div>
                 </div>
+                
+                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-microchip"></i>
@@ -620,6 +791,8 @@
                         <p>Penggantian komponen rusak dengan sparepart original atau berkualitas tinggi dengan garansi.</p>
                     </div>
                 </div>
+                
+                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tachometer-alt"></i>
@@ -629,6 +802,8 @@
                         <p>Upgrade RAM, SSD/HDD, dan komponen lain untuk meningkatkan performa perangkat Anda.</p>
                     </div>
                 </div>
+                
+                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -638,6 +813,8 @@
                         <p>Service berkala untuk menjaga performa optimal dan memperpanjang usia pakai perangkat.</p>
                     </div>
                 </div>
+                
+                <!-- Service 6 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
@@ -651,32 +828,45 @@
         </div>
     </section>
 
+    <!-- Promo Banner -->
     <section class="promo-banner">
         <div class="container">
             <h2>PROMO KHUSUS!</h2>
-            <p>Nikmati berbagai penawaran menarik dari V_TECH untuk perawatan dan perbaikan perangkat Anda.</p>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">
-                    <i class="fas fa-car" style="font-size: 2rem; margin-bottom: 10px;"></i>
+            <p>Nikmati berbagai penawaran menarik dari V_TECH untuk perawatan dan perbaikan perangkat Anda</p>
+            
+            <div class="promo-features">
+                <!-- Promo 1 -->
+                <div class="promo-feature">
+                    <i class="fas fa-car"></i>
                     <h3>Gratis Antar Jemput</h3>
+                    <p>Area Kota Mojokerto</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">
-                    <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                
+                <!-- Promo 2 -->
+                <div class="promo-feature">
+                    <i class="fas fa-search"></i>
                     <h3>Gratis Pengecekan</h3>
+                    <p>Diagnosa kerusakan gratis</p>
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px;">
-                    <i class="fas fa-comments" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                
+                <!-- Promo 3 -->
+                <div class="promo-feature">
+                    <i class="fas fa-comments"></i>
                     <h3>Gratis Konsultasi</h3>
+                    <p>Solusi masalah teknologi</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
             <div class="section-title">
                 <h2>Produk Unggulan</h2>
+                <p>Kami juga menyediakan berbagai laptop berkualitas untuk kebutuhan Anda</p>
             </div>
+            
             <div class="products-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
@@ -691,15 +881,15 @@
                     </div>
                     <div class="product-content">
                         <h3>HP Elitebook 745 G6</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce Ryzen 7 pro 3700</li>
                             <li><i class="fas fa-memory"></i> Ram 16gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
                             <li><i class="fas fa-tv"></i> VGA Vega10 2gb</li>
                             <li><i class="fas fa-expand"></i> Layar 14inch</li>
                         </ul>
-                        <span class="price">Rp 8.500.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Elitebook%20745%20G6" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 8.500.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Elitebook%20745%20G6" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -716,14 +906,14 @@
                     </div>
                     <div class="product-content">
                         <h3>HP Probook 430 G8</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci5 gen 11</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 512gb</li>
                             <li><i class="fas fa-expand"></i> Layar 13.3inch</li>
                         </ul>
-                        <span class="price">Rp 7.200.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20430%20G8" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 7.200.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20430%20G8" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -740,14 +930,14 @@
                     </div>
                     <div class="product-content">
                         <h3>HP Probook 640 G5</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci5 gen8</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
                             <li><i class="fas fa-expand"></i> Layar 14inch</li>
                         </ul>
-                        <span class="price">Rp 6.800.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20640%20G5" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 6.800.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20640%20G5" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -764,14 +954,14 @@
                     </div>
                     <div class="product-content">
                         <h3>Dell Latitude 7490</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci7 gen8</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
                             <li><i class="fas fa-expand"></i> Layar 14inch</li>
                         </ul>
-                        <span class="price">Rp 9.500.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207490" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 9.500.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207490" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -788,14 +978,14 @@
                     </div>
                     <div class="product-content">
                         <h3>Dell Latitude 7280</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce Intel Ci5 gen6</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
                             <li><i class="fas fa-expand"></i> Layar 12.5inch</li>
                         </ul>
-                        <span class="price">Rp 5.500.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207280" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 5.500.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207280" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -812,14 +1002,14 @@
                     </div>
                     <div class="product-content">
                         <h3>HP Probook 430 G7</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci5 gen 10</li>
                             <li><i class="fas fa-memory"></i> Ram 16gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
                             <li><i class="fas fa-expand"></i> Layar 13.3inch</li>
                         </ul>
-                        <span class="price">Rp 7.800.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20430%20G7" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 7.800.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20HP%20Probook%20430%20G7" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -836,14 +1026,14 @@
                     </div>
                     <div class="product-content">
                         <h3>Dell Latitude 7390</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci5 gen8</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
-                            <li><i class="fas fa-expand"></i> Layar 13.3inch</li>
+                            <li><i class="fas fa-expand"></i> Display 13.3inch</li>
                         </ul>
-                        <span class="price">Rp 8.200.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207390" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 8.200.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Dell%20Latitude%207390" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
                 
@@ -860,57 +1050,63 @@
                     </div>
                     <div class="product-content">
                         <h3>Lenovo Thinkpad L13 gen2</h3>
-                        <ul>
+                        <ul class="product-specs">
                             <li><i class="fas fa-microchip"></i> Proce intel Ci5 gen11</li>
                             <li><i class="fas fa-memory"></i> Ram 8gb</li>
                             <li><i class="fas fa-hdd"></i> Ssd 256gb</li>
-                            <li><i class="fas fa-expand"></i> Layar 13.3inch</li>
+                            <li><i class="fas fa-expand"></i> Led 13.3inch</li>
                         </ul>
-                        <span class="price">Rp 9.000.000</span>
-                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Lenovo%20Thinkpad%20L13%20gen2" class="btn" target="_blank">Beli Sekarang</a>
+                        <span class="product-price">Rp 9.000.000</span>
+                        <a href="https://wa.me/6281358903616?text=Saya%20tertarik%20dengan%20produk%20Lenovo%20Thinkpad%20L13%20gen2" class="btn btn-accent" target="_blank">Beli Sekarang</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Hubungi Kami</h2>
+                <p>Silakan hubungi kami untuk informasi lebih lanjut atau konsultasi gratis</p>
             </div>
+            
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Informasi Kontak</h3>
                     <p>Silahkan hubungi kami melalui kontak berikut atau kunjungi workshop kami untuk konsultasi langsung.</p>
-                    <ul>
+                    
+                    <ul class="contact-details">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <span>V_Tech Hardware & Software, Pasarkliwon, Mergelo, Mentikan, Kec. Prajurit Kulon, Kota Mojokerto, Jawa Timur 61323</span>
                         </li>
                         <li>
                             <i class="fas fa-phone-alt"></i>
-                            <span><a href="tel:081358903616" style="color: white;">0813-5890-3616</a></span>
+                            <a href="tel:081358903616">0813-5890-3616</a>
                         </li>
                         <li>
                             <i class="fab fa-whatsapp"></i>
-                            <span><a href="https://wa.me/6281358903616" style="color: white;" target="_blank">WhatsApp: 0813-5890-3616</a></span>
+                            <a href="https://wa.me/6281358903616" target="_blank">WhatsApp: 0813-5890-3616</a>
                         </li>
                         <li>
                             <i class="fab fa-instagram"></i>
-                            <span><a href="https://instagram.com/vtechgeneration_" style="color: white;" target="_blank">@vtechgeneration_</a></span>
+                            <a href="https://instagram.com/vtechgeneration_" target="_blank">@vtechgeneration_</a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>vtech.service@gmail.com</span>
+                            <a href="mailto:vtech.service@gmail.com">vtech.service@gmail.com</a>
                         </li>
                     </ul>
-                    <div class="social-links" style="justify-content: flex-start; margin-top: 30px;">
+                    
+                    <div class="contact-social">
                         <a href="https://wa.me/6281358903616" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://instagram.com/vtechgeneration_" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
+                
                 <div class="contact-form">
                     <h3>Kirim Pesan</h3>
                     <form id="contactForm">
@@ -937,35 +1133,40 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Tentang Kami</h3>
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h4>Tentang Kami</h4>
                     <p>V_TECH SOFTWARE & HARDWARE adalah penyedia jasa service komputer profesional dengan tim teknisi berpengalaman dan bergaransi.</p>
                     <p>Kami berkomitmen memberikan layanan terbaik dengan harga kompetitif.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Layanan</h3>
-                    <ul style="list-style: none;">
-                        <li><i class="fas fa-check" style="color: var(--secondary); margin-right: 5px;"></i> Service Laptop/Komputer</li>
-                        <li><i class="fas fa-check" style="color: var(--secondary); margin-right: 5px;"></i> Service Printer</li>
-                        <li><i class="fas fa-check" style="color: var(--secondary); margin-right: 5px;"></i> Penggantian Komponen</li>
-                        <li><i class="fas fa-check" style="color: var(--secondary); margin-right: 5px;"></i> Upgrade Perangkat</li>
+                
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Service Laptop/Komputer</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Service Printer</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Penggantian Komponen</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Upgrade Perangkat</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Kontak</h3>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 10px;"></i> Pasarkliwon, Mergelo, Mentikan, Kec. Prajurit Kulon, Kota Mojokerto</p>
-                    <p><i class="fas fa-phone-alt" style="color: var(--secondary); margin-right: 10px;"></i> 0813-5890-3616</p>
-                    <p><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 10px;"></i> vtech.service@gmail.com</p>
-                    <div class="social-links">
+                
+                <div class="footer-col footer-contact">
+                    <h4>Kontak</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Pasarkliwon, Mergelo, Mentikan, Kec. Prajurit Kulon, Kota Mojokerto</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:081358903616">0813-5890-3616</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:vtech.service@gmail.com">vtech.service@gmail.com</a></p>
+                    
+                    <div class="footer-social">
                         <a href="https://wa.me/6281358903616" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://instagram.com/vtechgeneration_" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="copyright">
                 <p>&copy; 2023 V_TECH SOFTWARE & HARDWARE. All Rights Reserved.</p>
             </div>
@@ -973,19 +1174,38 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    nav.classList.remove('active');
+                }
             });
         });
-        
+
         // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -994,35 +1214,39 @@
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
             
+            // Simple validation
+            if (!name || !email || !phone || !message) {
+                alert('Harap lengkapi semua field!');
+                return;
+            }
+            
             // Here you would typically send the form data to a server
-            // For this example, we'll just show an alert and clear the form
+            // For this example, we'll just show an alert
             alert(`Terima kasih ${name}! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.`);
             
-            // Clear the form
+            // Reset the form
             this.reset();
-            
-            // In a real implementation, you might use fetch() or AJAX to send the data
-            // to your server or a form handling service
         });
-        
-        // Animation on scroll
-        window.addEventListener('scroll', function() {
-            const elements = document.querySelectorAll('.service-card, .product-card');
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .product-card, .promo-feature');
+            const windowHeight = window.innerHeight;
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+                const animationPoint = windowHeight * 0.8;
                 
-                if(elementPosition < screenPosition) {
+                if (elementPosition < animationPoint) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
-        });
-        
+        }
+
         // Initialize elements with opacity 0 for animation
         document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.service-card, .product-card');
+            const elements = document.querySelectorAll('.service-card, .product-card, .promo-feature');
             
             elements.forEach(element => {
                 element.style.opacity = '0';
@@ -1031,10 +1255,11 @@
             });
             
             // Trigger the animation for elements already in view
-            setTimeout(() => {
-                window.dispatchEvent(new Event('scroll'));
-            }, 100);
+            animateOnScroll();
         });
+
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
